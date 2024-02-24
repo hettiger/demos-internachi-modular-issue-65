@@ -1,0 +1,6 @@
+{
+    "validation.required": "Das Feld :attribute muss ausgefüllt sein.",
+    "validation.attributes": {
+        "name": "Name"
+    }
+}
