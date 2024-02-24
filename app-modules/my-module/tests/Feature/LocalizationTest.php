@@ -1,8 +1,14 @@
 <?php
 
 
-test('', function () {
-    $response = $this->get('/');
+it('localizes validation messages', function () {
+    app()->setLocale('de');
 
-    $response->assertStatus(200);
+    $messages = validator(
+        ['name' => null],
+        ['name' => 'required'],
+    )->errors();
+
+    expect($messages->all())
+        ->toBe(['Das Feld Name muss ausgefüllt sein.']);
 });
